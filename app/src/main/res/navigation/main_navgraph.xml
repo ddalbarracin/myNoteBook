@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navgraph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.utn.mcrarv1.fragment.loginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_regFragment"
+            app:destination="@id/regFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_appListFragment2"
+            app:destination="@id/appListFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/regFragment"
+        android:name="com.utn.mcrarv1.fragment.regFragment"
+        android:label="fragment_reg"
+        tools:layout="@layout/fragment_reg" >
+        <action
+            android:id="@+id/action_regFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/appMainFragment"
+        android:name="com.utn.mcrarv1.fragment.appMainFragment"
+        android:label="fragment_appmain"
+        tools:layout="@layout/fragment_appmain" >
+        <argument
+            android:name="user"
+            app:argType="string" />
+        <argument
+            android:name="userid"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/appListFragment2"
+        android:name="com.utn.mcrarv1.fragment.appListFragment"
+        android:label="fragment_applist"
+        tools:layout="@layout/fragment_applist" >
+        <argument
+            android:name="userLoged"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_appListFragment2_to_containerFragment"
+            app:destination="@id/containerFragment" />
+        <action
+            android:id="@+id/action_appListFragment2_to_addFragment2"
+            app:destination="@id/addFragment" />
+        <action
+            android:id="@+id/action_appListFragment2_to_settingsActivity"
+            app:destination="@id/settingsActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/tab1Fragment"
+        android:name="com.utn.mcrarv1.fragment.Tab1Fragment"
+        android:label="fragment_tab1"
+        tools:layout="@layout/fragment_tab1" />
+    <fragment
+        android:id="@+id/tab2Fragment"
+        android:name="com.utn.mcrarv1.fragment.Tab2ragment"
+        android:label="fragment_tab2ragment"
+        tools:layout="@layout/fragment_tab2" />
+    <fragment
+        android:id="@+id/tab3Fragment"
+        android:name="com.utn.mcrarv1.fragment.Tab3Fragment"
+        android:label="fragment_tab3"
+        tools:layout="@layout/fragment_tab3" />
+    <fragment
+        android:id="@+id/containerFragment"
+        android:name="com.utn.mcrarv1.fragment.ContainerFragment"
+        android:label="fragment_container"
+        tools:layout="@layout/fragment_container" >
+        <argument
+            android:name="userID"
+            app:argType="integer" />
+        <argument
+            android:name="contactID"
+            app:argType="integer" />
+    </fragment>
+    <activity
+        android:id="@+id/settingsActivity"
+        android:name="com.utn.mcrarv1.SettingsActivity"
+        android:label="SettingsActivity" />
+    <fragment
+        android:id="@+id/addFragment"
+        android:name="com.utn.mcrarv1.fragment.addFragment"
+        android:label="addFragment" >
+        <action
+            android:id="@+id/action_addFragment_to_appListFragment2"
+            app:destination="@id/appListFragment2" />
+        <argument
+            android:name="userID"
+            app:argType="integer" />
+    </fragment>
+</navigation>
